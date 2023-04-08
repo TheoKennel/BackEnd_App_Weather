@@ -3,20 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const corsI = require('cors');
 
 require('./models/connection');
-
-const cors = require('cors');
-app.use(cors());
-
-  
-
 var indexRouter = require('./routes/index');
 var weatherRouter = require('./routes/weather');
 var userRouter = require('./routes/users')
 
 var app = express();
+
+const cors = require('cors');
+app.use(cors());
 
 
 
