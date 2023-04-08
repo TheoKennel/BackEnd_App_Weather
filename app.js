@@ -3,16 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const cors = require('cors');
+const corsI = require('cors');
 
 require('./models/connection');
 
-const corsOptions = {
-    origin: 'https://front-weather-app-4cyd.vercel.app',
-    optionsSuccessStatus: 200,
-  };
-  
-  app.use(cors(corsOptions));
+const cors = require('cors');
+app.use(cors());
+
   
 
 var indexRouter = require('./routes/index');
