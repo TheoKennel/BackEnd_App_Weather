@@ -6,14 +6,21 @@ var logger = require('morgan');
 
 require('./models/connection');
 
+const corsOptions = {
+    origin: 'https://front-weather-app-4cyd.vercel.app',
+    optionsSuccessStatus: 200,
+  };
+  
+  app.use(cors(corsOptions));
+  
+
 var indexRouter = require('./routes/index');
 var weatherRouter = require('./routes/weather');
 var userRouter = require('./routes/users')
 
 var app = express();
 
-const cors = require('cors');
-app.use(cors());
+
 
 app.use(logger('dev'));
 app.use(express.json());
